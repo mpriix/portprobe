@@ -43,12 +43,12 @@ pub fn config_path(name: &str) -> PathBuf {
 
 /// Retrieve path to compiled portprobe binary.
 pub fn target_bin_path() -> PathBuf {
-    let mut path = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+    let path = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .join("target")
         .join("debug")
         .join("portprobe");
     #[cfg(windows)]
-    path.set_extension("exe");
+    let path = path.with_extension("exe");
     path
 }
 
