@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080D1A" />
+      <stop offset="50%" stop-color="#0C1322" />
+      <stop offset="100%" stop-color="#060A14" />
+    </linearGradient>
+
+    <!-- Gradient Accents -->
+    <linearGradient id="ppGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE" />
+      <stop offset="50%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+
+    <linearGradient id="ppGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#60A5FA" stop-opacity="0.3" />
+    </linearGradient>
+
+    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Atmospheric Glows -->
+    <radialGradient id="cyanRadial" cx="22%" cy="48%" r="40%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.25" />
+      <stop offset="60%" stop-color="#06B6D4" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="blueRadial" cx="80%" cy="30%" r="45%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.20" />
+      <stop offset="60%" stop-color="#3B82F6" stop-opacity="0.04" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Technical Grid Pattern -->
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="0.75" stroke-opacity="0.6" />
+    </pattern>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .font-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 800; }
+    .font-sub { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 600; }
+    .font-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 400; }
+    .font-mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1280" height="640" fill="url(#bgGrad)" />
+  <rect width="1280" height="640" fill="url(#gridPattern)" />
+  <rect width="1280" height="640" fill="url(#cyanRadial)" />
+  <rect width="1280" height="640" fill="url(#blueRadial)" />
+
+  <!-- Top Accent Bar -->
+  <rect x="0" y="0" width="1280" height="4" fill="url(#ppGrad)" />
+
+  <!-- Outer Border -->
+  <rect x="1" y="1" width="1278" height="638" rx="8" fill="none" stroke="#1E293B" stroke-width="1.5" />
+
+  <!-- Ambient Light Behind Logo -->
+  <circle cx="230" cy="320" r="160" fill="#06B6D4" fill-opacity="0.12" filter="url(#softGlow)" />
+
+  <!-- Left: Emblem / Logo (derived directly from logo.svg, scaled 7x) -->
+  <g transform="translate(90, 180) scale(7)">
+    <!-- Outer Hexagon Ring -->
+    <polygon points="20,3 35,11.5 35,28.5 20,37 5,28.5 5,11.5" stroke="url(#ppGrad)" stroke-width="2.5" fill="none" stroke-linejoin="round" />
+    <!-- Inner Concentric Node Grid -->
+    <polygon points="20,9 29,14.5 29,25.5 20,31 11,25.5 11,14.5" stroke="url(#ppGlow)" stroke-width="1.5" fill="#0E1726" fill-opacity="0.75" stroke-linejoin="round" />
+    <!-- Center Probe Focal Point -->
+    <circle cx="20" cy="20" r="4" fill="url(#ppGrad)" />
+    <circle cx="20" cy="20" r="7" stroke="#38BDF8" stroke-width="1" stroke-dasharray="2 2" fill="none" />
+    <!-- Axis Radiants -->
+    <line x1="20" y1="3" x2="20" y2="9" stroke="url(#ppGrad)" stroke-width="2" stroke-linecap="round" />
+    <line x1="35" y1="28.5" x2="29" y2="25.5" stroke="url(#ppGrad)" stroke-width="2" stroke-linecap="round" />
+    <line x1="5" y1="28.5" x2="11" y2="25.5" stroke="url(#ppGrad)" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+  <!-- Right: Typography & Details -->
+  <!-- Release Pill -->
+  <g transform="translate(430, 140)">
+    <rect width="260" height="36" rx="18" fill="url(#badgeGrad)" stroke="#334155" stroke-width="1" />
+    <circle cx="20" cy="18" r="5" fill="#10B981" />
+    <text x="35" y="23" fill="#94A3B8" class="font-mono" font-size="13" font-weight="600" letter-spacing="1">VERSION 2.0.0 • STABLE</text>
+  </g>
+
+  <!-- Brand Title -->
+  <g transform="translate(430, 240)">
+    <text x="0" y="0" class="font-title" font-size="76" fill="#FFFFFF" letter-spacing="-1">Port<tspan fill="#38BDF8">Probe</tspan></text>
+  </g>
+
+  <!-- Tagline -->
+  <g transform="translate(430, 292)">
+    <text x="0" y="0" class="font-sub" font-size="24" fill="#E2E8F0" letter-spacing="-0.3">
+      Enterprise Asynchronous TCP Connectivity Verification
+    </text>
+  </g>
+
+  <!-- Description -->
+  <g transform="translate(430, 335)">
+    <text x="0" y="0" class="font-body" font-size="18" fill="#94A3B8">
+      High-concurrency daemon and client probe written in safe Rust for
+    </text>
+    <text x="0" y="26" class="font-body" font-size="18" fill="#94A3B8">
+      Site Reliability Engineering (SRE), DevOps &amp; Cloud Infrastructure teams.
+    </text>
+  </g>
+
+  <!-- Divider Line -->
+  <line x1="430" y1="395" x2="1180" y2="395" stroke="#1E293B" stroke-width="1.5" />
+
+  <!-- Feature Highlights / Badges Row -->
+  <!-- Badge 1: 100% Safe Rust -->
+  <g transform="translate(430, 425)">
+    <rect width="170" height="42" rx="8" fill="#0F172A" stroke="#1E293B" stroke-width="1.2" />
+    <circle cx="20" cy="21" r="4" fill="#F97316" />
+    <text x="32" y="26" class="font-sub" font-size="14" fill="#F8FAFC">Safe Rust 2021</text>
+  </g>
+
+  <!-- Badge 2: Multi-Port & TLS 1.3 -->
+  <g transform="translate(615, 425)">
+    <rect width="185" height="42" rx="8" fill="#0F172A" stroke="#1E293B" stroke-width="1.2" />
+    <circle cx="20" cy="21" r="4" fill="#06B6D4" />
+    <text x="32" y="26" class="font-sub" font-size="14" fill="#F8FAFC">TLS 1.3 &amp; mTLS</text>
+  </g>
+
+  <!-- Badge 3: Rate Limiting & Concurrency -->
+  <g transform="translate(815, 425)">
+    <rect width="190" height="42" rx="8" fill="#0F172A" stroke="#1E293B" stroke-width="1.2" />
+    <circle cx="20" cy="21" r="4" fill="#3B82F6" />
+    <text x="32" y="26" class="font-sub" font-size="14" fill="#F8FAFC">Rate Limiting (CIDR)</text>
+  </g>
+
+  <!-- Badge 4: Prometheus & Metrics -->
+  <g transform="translate(1020, 425)">
+    <rect width="165" height="42" rx="8" fill="#0F172A" stroke="#1E293B" stroke-width="1.2" />
+    <circle cx="20" cy="21" r="4" fill="#A855F7" />
+    <text x="32" y="26" class="font-sub" font-size="14" fill="#F8FAFC">Prometheus SRE</text>
+  </g>
+
+  <!-- Secondary Metrics / Status Line -->
+  <g transform="translate(430, 520)">
+    <text x="0" y="0" class="font-mono" font-size="13" fill="#64748B">
+      SUB-MILLISECOND P50 LATENCY (400µs)  •  10,000 CONCURRENT SESSIONS  •  ZERO RUNTIME PANICS
+    </text>
+  </g>
+
+</svg>
