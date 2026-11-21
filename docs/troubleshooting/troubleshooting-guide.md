@@ -17,7 +17,7 @@ flowchart TD
     START[Encountering Issue with PortProbe] --> Q1{Is Daemon Starting?}
     
     Q1 -->|No| D1{Error Message?}
-    D1 -->|Address already in use| R1[Port Conflict: ss -tuln | grep <port><br/>Select free port or terminate conflicting process]
+    D1 -->|Address already in use| R1["Port Conflict: ss -tuln | grep port<br/>Select free port or terminate conflicting process"]
     D1 -->|Permission denied| R2["Privileged port (<1024): Use sudo or setcap<br/>Or use unprivileged port >=1024"]
     D1 -->|Insecure permissions| R3[Token/Key permissions too open<br/>Run chmod 0600 on file]
     D1 -->|Configuration error| R4[Invalid range/syntax in portprobe.toml<br/>Review docs/reference/cli-reference.md]

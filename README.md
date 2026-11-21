@@ -56,7 +56,7 @@ flowchart TD
         TLS[TLS 1.3 / mTLS Engine]
         CH[Connection Handler<br/>Tokio Async Tasks]
         
-        ADMIN[Admin Server :9090<br/>GET /healthz | GET /metrics]
+        ADMIN["Admin Server :9090<br/>GET /healthz | GET /metrics"]
     end
 
     subgraph Enterprise Infrastructure
