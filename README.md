@@ -78,7 +78,7 @@ flowchart TD
     CH -->|PORTPROBE Banner| SRE
 
     ADMIN -->|Scrape /metrics| PROM
-    PortProbe Daemon -.->|JSON Logs| SIEM
+    Daemon -.->|JSON Logs| SIEM
 ```
 
 ---
