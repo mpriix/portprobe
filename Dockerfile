@@ -10,13 +10,16 @@ RUN apk add --no-cache musl-dev
 
 # Copy manifests and pre-build dependencies
 COPY Cargo.toml Cargo.lock ./
-RUN mkdir src && echo "fn main() {}" > src/main.rs && \
-    cargo build --release && \
-    rm -rf src
+RUN mkdir -p src benches && \
+    echo "fn main() {}" > src/main.rs && \
+    touch src/lib.rs benches/concurrency_benchmark.rs benches/connection_benchmark.rs benches/throughput_benchmark.rs && \
+    cargo build --release --bin portprobe && \
+    rm -rf src benches target/release/deps/portprobe* target/release/deps/libportprobe* target/release/portprobe*
 
 # Copy actual source files and build optimized binary
 COPY src ./src
-RUN touch src/main.rs && cargo build --release --locked
+COPY benches ./benches
+RUN touch src/main.rs src/lib.rs && cargo build --release --locked --bin portprobe
 
 # Runtime stage: minimal non-root image
 FROM alpine:3.20
