@@ -70,7 +70,7 @@ sudo setcap 'cap_net_bind_service=+ep' /usr/local/bin/portprobe
 
 ## 4. Container Deployment (Docker & Podman)
 
-PortProbe includes a production-ready, multi-stage, hardened `Dockerfile` based on Alpine Linux 3.20. It executes as an unprivileged service user (`portprobe`, UID 10001) and includes a native health check.
+PortProbe includes a production-ready, multi-stage, hardened `Dockerfile` based on Alpine Linux 3.21. It executes as an unprivileged service user (`portprobe`, UID 10001) and includes a native health check.
 
 ### Step 1: Build Container Image
 ```bash

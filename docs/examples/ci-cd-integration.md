@@ -70,7 +70,7 @@ stages:
 
 network-validation:
   stage: preflight
-  image: alpine:3.20
+  image: alpine:3.21
   before_script:
     - apk add --no-cache curl
     - curl -sSL https://github.com/mpriix/portprobe/releases/latest/download/portprobe-linux-amd64 -o /usr/local/bin/portprobe

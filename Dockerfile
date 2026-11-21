@@ -22,10 +22,12 @@ COPY benches ./benches
 RUN touch src/main.rs src/lib.rs && cargo build --release --locked --bin portprobe
 
 # Runtime stage: minimal non-root image
-FROM alpine:3.20
+FROM alpine:3.21
 
-# Create unprivileged runtime user
-RUN addgroup -S -g 10001 portprobe && \
+# Upgrade base packages to apply latest security patches (SEC-FIND-A14)
+# and create unprivileged runtime user
+RUN apk upgrade --no-cache && \
+    addgroup -S -g 10001 portprobe && \
     adduser -S -u 10001 -G portprobe portprobe
 
 # Copy binary from builder
