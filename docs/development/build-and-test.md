@@ -63,7 +63,7 @@ cargo audit
 cargo deny check
 
 # Generate CycloneDX Software Bill of Materials (SBOM)
-cargo cyclonedx --format json --output-pattern "portprobe-sbom.cdx.json"
+cargo cyclonedx --format json --override-filename "portprobe-sbom.cdx.json"
 ```
 
 ---

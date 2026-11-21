@@ -1140,8 +1140,13 @@ hold_open = true
     #[test]
     fn test_cli_validate_admin_token_file() {
         let temp_dir = std::env::temp_dir();
-        let token_path = temp_dir.join("test_admin_token.txt");
+        let token_path = temp_dir.join(format!("test_admin_token_{}.txt", std::process::id()));
         std::fs::write(&token_path, "SecretFromTokenFile123\n").unwrap();
+        #[cfg(unix)]
+        {
+            use std::os::unix::fs::PermissionsExt;
+            std::fs::set_permissions(&token_path, std::fs::Permissions::from_mode(0o600)).unwrap();
+        }
 
         let mut cli = make_cli(8080, 100, 10);
         cli.admin_token_file = Some(token_path.clone());
@@ -1149,6 +1154,27 @@ hold_open = true
 
         cli.resolve_defaults();
         assert_eq!(cli.admin_token, Some("SecretFromTokenFile123".to_string()));
+
+        let _ = std::fs::remove_file(token_path);
+    }
+
+    #[cfg(unix)]
+    #[test]
+    fn test_cli_validate_admin_token_file_insecure_permissions() {
+        use std::os::unix::fs::PermissionsExt;
+        let temp_dir = std::env::temp_dir();
+        let token_path = temp_dir.join(format!(
+            "test_admin_token_insecure_{}.txt",
+            std::process::id()
+        ));
+        std::fs::write(&token_path, "SecretFromTokenFile123\n").unwrap();
+        std::fs::set_permissions(&token_path, std::fs::Permissions::from_mode(0o644)).unwrap();
+
+        let mut cli = make_cli(8080, 100, 10);
+        cli.admin_token_file = Some(token_path.clone());
+        let res = cli.validate();
+        assert!(res.is_err());
+        assert!(res.unwrap_err().contains("Insecure permissions"));
 
         let _ = std::fs::remove_file(token_path);
     }

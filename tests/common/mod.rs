@@ -33,7 +33,13 @@ pub fn fixtures_dir() -> PathBuf {
 
 /// Retrieve path to a certificate in tests/fixtures/certs/.
 pub fn cert_path(name: &str) -> PathBuf {
-    fixtures_dir().join("certs").join(name)
+    let path = fixtures_dir().join("certs").join(name);
+    #[cfg(unix)]
+    if name.ends_with(".key") && path.exists() {
+        use std::os::unix::fs::PermissionsExt;
+        let _ = std::fs::set_permissions(&path, std::fs::Permissions::from_mode(0o600));
+    }
+    path
 }
 
 /// Retrieve path to a config in tests/fixtures/configs/.

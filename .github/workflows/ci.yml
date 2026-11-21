@@ -54,7 +54,7 @@ jobs:
       - name: Run cargo deny check
         run: cargo deny check
       - name: Generate CycloneDX SBOM (Finding SEC-2026-24)
-        run: cargo cyclonedx --format json --output-pattern "portprobe-sbom.cdx.json"
+        run: cargo cyclonedx --format json --override-filename "portprobe-sbom.cdx.json"
       - name: Upload SBOM Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -69,7 +69,7 @@ jobs:
       - name: Build hardened deployment container
         run: docker build -t portprobe:ci .
       - name: Run Trivy container vulnerability scanner
-        uses: aquasecurity/trivy-action@v0.28.0
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: 'portprobe:ci'
           format: 'table'
