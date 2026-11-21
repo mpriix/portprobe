@@ -58,7 +58,7 @@ PortProbe is structured as a dual-mode Rust binary and library:
 - **Finding SEC-AUD-03 (Internal Corporate URLs in Documentation)**:
   - *Location*: [`docs/examples/ci-cd-integration.md`](docs/examples/ci-cd-integration.md#L39) and generated bundle `docs/assets/js/docs-bundle.js`.
   - *Issue*: Contained internal company artifact URLs (`https://internal-artifacts.corp/portprobe-linux-amd64` and `https://internal-artifacts.corp/portprobe`).
-  - *Remediation*: Replaced with public GitHub release URLs (`https://github.com/portprobe/portprobe/releases/latest/download/portprobe-linux-amd64`). Regenerated documentation bundle with `python docs/scripts/build.py`.
+  - *Remediation*: Replaced with public GitHub release URLs (`https://github.com/mpriix/portprobe/releases/latest/download/portprobe-linux-amd64`). Regenerated documentation bundle with `python docs/scripts/build.py`.
 - **Finding SEC-AUD-04 (Internal Domain References)**:
   - *Location*: [`docs/user-guide/client-usage.md`](docs/user-guide/client-usage.md#L65), [`docs/user-guide/practical-examples.md`](docs/user-guide/practical-examples.md#L67).
   - *Issue*: Examples referenced `probe.internal.net` and `db.internal.bank`.

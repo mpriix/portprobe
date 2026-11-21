@@ -22,7 +22,7 @@ PortProbe can be installed using four primary methods depending on your infrastr
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/portprobe/portprobe.git
+git clone https://github.com/mpriix/portprobe.git
 cd portprobe
 ```
 

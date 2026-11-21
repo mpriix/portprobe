@@ -16,7 +16,7 @@ PortProbe includes a fully hardened, production-ready systemd unit file (`portpr
 ```ini
 [Unit]
 Description=PortProbe Secure TCP Connectivity Testing Service
-Documentation=https://github.com/portprobe/portprobe
+Documentation=https://github.com/mpriix/portprobe
 After=network.target
 
 [Service]

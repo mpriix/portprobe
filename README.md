@@ -2,7 +2,7 @@
 
 **Enterprise Asynchronous TCP Connectivity Verification Daemon and Client Probe**
 
-[![CI Status](https://github.com/portprobe/portprobe/actions/workflows/ci.yml/badge.svg)](https://github.com/portprobe/portprobe/actions)
+[![CI Status](https://github.com/mpriix/portprobe/actions/workflows/ci.yml/badge.svg)](https://github.com/mpriix/portprobe/actions)
 [![Rust Version](https://img.shields.io/badge/rust-1.80%2B-orange.svg)](https://www.rust-lang.org)
 [![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](Cargo.toml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -89,7 +89,7 @@ flowchart TD
 
 #### Build from Source (Requires Rust 1.80+)
 ```bash
-git clone https://github.com/portprobe/portprobe.git
+git clone https://github.com/mpriix/portprobe.git
 cd portprobe
 cargo build --release
 sudo cp target/release/portprobe /usr/local/bin/

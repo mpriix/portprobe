@@ -50,7 +50,7 @@ window.PortProbeRenderer = (function () {
       // External repo source code links (e.g. ../src/main.rs or ../../src/cli.rs)
       if (href.includes('/src/') || href.startsWith('../src/') || href.startsWith('../../src/')) {
         const cleanHref = href.replace(/^(\.\.\/)+/, '');
-        return `<a href="https://github.com/portprobe/portprobe/blob/master/${cleanHref}" target="_blank" rel="noopener noreferrer"${rest}>`;
+        return `<a href="https://github.com/mpriix/portprobe/blob/main/${cleanHref}" target="_blank" rel="noopener noreferrer"${rest}>`;
       }
       
       // Resolve relative path and section anchor

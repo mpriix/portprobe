@@ -36,7 +36,7 @@ jobs:
 
       - name: Install PortProbe Binary
         run: |
-          curl -sSL https://github.com/portprobe/portprobe/releases/latest/download/portprobe-linux-amd64 -o /usr/local/bin/portprobe
+          curl -sSL https://github.com/mpriix/portprobe/releases/latest/download/portprobe-linux-amd64 -o /usr/local/bin/portprobe
           chmod +x /usr/local/bin/portprobe
 
       - name: Verify Database Reachability (Port 5432)
@@ -73,7 +73,7 @@ network-validation:
   image: alpine:3.20
   before_script:
     - apk add --no-cache curl
-    - curl -sSL https://github.com/portprobe/portprobe/releases/latest/download/portprobe-linux-amd64 -o /usr/local/bin/portprobe
+    - curl -sSL https://github.com/mpriix/portprobe/releases/latest/download/portprobe-linux-amd64 -o /usr/local/bin/portprobe
     - chmod +x /usr/local/bin/portprobe
   script:
     - echo "Validating core banking database reachability..."

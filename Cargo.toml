@@ -5,8 +5,8 @@ edition = "2021"
 description = "Secure TCP connectivity testing utility for SRE teams"
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/portprobe/portprobe"
-documentation = "https://github.com/portprobe/portprobe#readme"
+repository = "https://github.com/mpriix/portprobe"
+documentation = "https://github.com/mpriix/portprobe#readme"
 keywords = ["networking", "tcp", "sre", "connectivity", "probe"]
 categories = ["command-line-utilities", "network-programming"]
 
