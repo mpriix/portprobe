@@ -1,0 +1,218 @@
+/* ==============================================================================
+   PortProbe Documentation Responsive Stylesheet
+   Modern technical documentation breakpoints for laptop, tablet, and mobile devices
+   ============================================================================== */
+
+/* Laptops & Smaller Desktops (< 1200px) */
+@media (max-width: 1200px) {
+  .app-toc {
+    display: none; /* Hide Right Table of Contents */
+  }
+
+  .app-main {
+    padding: 2rem 2.5rem 4rem 2.5rem;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablets & Small Laptops (< 1024px) */
+@media (max-width: 1024px) {
+  .menu-toggle-btn {
+    display: flex;
+  }
+
+  .mobile-search-btn {
+    display: flex;
+  }
+
+  .header-center {
+    display: none; /* Center search bar collapses into mobile search button */
+  }
+
+  .header-left {
+    gap: 0.75rem;
+  }
+
+  .app-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: var(--color-bg);
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);
+    width: min(320px, 85vw);
+    height: 100vh;
+    padding: 1rem 1rem 3rem 1rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: transform var(--transition-normal);
+  }
+
+  .app-sidebar.drawer-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-drawer-header {
+    display: flex;
+  }
+
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-fast);
+  }
+
+  .sidebar-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .app-main {
+    padding: 2rem 1.75rem 4rem 1.75rem;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Devices (< 768px) */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0 1rem;
+    height: 60px;
+  }
+
+  .app-main {
+    padding: 1.5rem 1rem 3.5rem 1rem;
+  }
+
+  .hero-pill {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.65rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .hero-desc {
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .doc-footer-nav {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .footer-nav-card.next {
+    grid-column: 1;
+    text-align: left;
+  }
+
+  .code-block-container pre {
+    padding: 0.75rem 1rem;
+    font-size: var(--text-xs);
+  }
+
+  .doc-meta-card {
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .diagram-toolbar {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 0.4rem 0.65rem;
+  }
+
+  .diagram-badge {
+    font-size: 0.7rem;
+  }
+
+  .diagram-viewport {
+    padding: 1rem 0.5rem;
+  }
+
+  .search-modal {
+    width: 95%;
+    max-height: 85vh;
+    margin: 1rem;
+  }
+}
+
+/* Small Smart Phones (< 480px) */
+@media (max-width: 480px) {
+  .brand-text {
+    font-size: 1.05rem;
+  }
+
+  .version-badge {
+    display: none; /* Hide version badge on very compact screens */
+  }
+
+  .header-right {
+    gap: 0.4rem;
+  }
+
+  .icon-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-snippet {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .hero-snippet code {
+    white-space: nowrap;
+    overflow-x: auto;
+    font-size: var(--text-xs);
+  }
+
+  .hero-snippet .copy-btn {
+    align-self: flex-end;
+  }
+}

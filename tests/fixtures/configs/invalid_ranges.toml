@@ -1,0 +1,3 @@
+# Invalid Port Range (> 100 ports)
+port = 8080
+ports = ["1000-1200"]

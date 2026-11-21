@@ -1,0 +1,68 @@
+# PortProbe Enterprise Configuration Template
+# Place in /etc/portprobe/portprobe.toml (permissions 0640, owner root:portprobe)
+
+# TCP port to listen on (1–65535)
+port = 8080
+
+# Optional additional ports or port ranges to listen on concurrently (SEC-FIND-19)
+# ports = ["8081", "8082", "8090-8095"]
+
+# Bind IP address (127.0.0.1 for localhost, specific IP for internal VLAN)
+bind = "127.0.0.1"
+
+# Connection lifetime in seconds before automatic graceful termination (1–3600)
+timeout = 15
+
+# Global concurrency limit across all active clients (1–10000)
+max_connections = 100
+
+# Per-source-IP concurrency cap (1–1000)
+max_connections_per_ip = 10
+
+# Maximum accepted connections per second globally via token bucket (1–1000)
+max_rate = 20
+
+# Maximum accepted connections per second from a single IP via token bucket (1–1000) (SEC-FIND-16)
+max_rate_per_ip = 5
+
+# Optional CIDR subnet allowlist for ingress filtering
+# Connections from addresses outside these subnets are rejected immediately
+allow_cidr = [
+    "10.0.0.0/8",
+    "172.16.0.0/12",
+    "192.168.0.0/16",
+    "127.0.0.1/32"
+]
+
+# Silently drop unauthorized connections without transmitting diagnostic banners (SEC-FIND-06)
+silent_reject = true
+
+# Keep TCP connection open until timeout expires; false closes immediately post-response (SEC-FIND-09)
+hold_open = false
+
+# Log format: "text" for human-readable terminal output or "json" for SIEM ingestion (SEC-FIND-03)
+log_format = "json"
+
+# Port for administrative Prometheus metrics and /healthz endpoint on 127.0.0.1
+admin_port = 9090
+
+# Optional Bearer token for authenticating administrative /metrics and /healthz endpoints (SEC-FIND-15, SEC-FIND-A02)
+# admin_token = "YOUR_ADMIN_BEARER_TOKEN"
+
+# Path to file containing Bearer token with 0600 permissions (SEC-FIND-A02)
+# admin_token_file = "/etc/portprobe/admin_token.secret"
+
+# Optional TLS Transport Encryption (SEC-FIND-10)
+# Uncomment to enable TLS encryption
+# tls_cert = "/etc/portprobe/certs/server.crt"
+# tls_key = "/etc/portprobe/certs/server.key"
+
+# Minimum TLS protocol version: "1.2" (default) or "1.3" (strict banking compliance) (SEC-FIND-A10)
+# tls_min_version = "1.3"
+
+# Optional Mutual TLS (mTLS) Client Verification
+# tls_client_ca = "/etc/portprobe/certs/ca-bundle.crt"
+
+# Unprivileged Linux user and group to drop privileges to post-socket-bind (SEC-FIND-08)
+# user = "portprobe"
+# group = "portprobe"

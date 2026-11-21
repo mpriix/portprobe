@@ -1,0 +1,43 @@
+# Rust / Cargo build artifacts
+/target/
+**/*.rs.bk
+*.profraw
+*.profdata
+lcov.info
+coverage/
+
+# Development environment & Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+
+# Operating system files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# Environment and sensitive configuration files
+.env
+.env.*
+*.secret
+!tests/fixtures/configs/*.toml
+
+# Test and runtime logs
+*.log
+
+# Python cache (from documentation build tools)
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Node cache (from documentation site tooling)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

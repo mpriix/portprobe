@@ -1,0 +1,15 @@
+# Valid PortProbe Configuration Fixture
+port = 8080
+ports = ["8081", "8082", "8090-8092"]
+bind = "127.0.0.1"
+timeout = 30
+max_connections = 500
+max_connections_per_ip = 25
+max_rate = 50
+max_rate_per_ip = 10
+allow_cidr = ["10.0.0.0/8", "192.168.0.0/16", "127.0.0.1/32"]
+silent_reject = true
+hold_open = false
+log_format = "json"
+admin_port = 9091
+admin_token = "SecretTestToken123"

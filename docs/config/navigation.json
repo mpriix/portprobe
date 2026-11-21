@@ -1,0 +1,1687 @@
+[
+  {
+    "id": "overview",
+    "title": "Overview",
+    "icon": "book-open",
+    "order": 1,
+    "items": [
+      {
+        "id": "README",
+        "path": "README.md",
+        "title": "Portal Home",
+        "headings": [
+          {
+            "level": 2,
+            "text": "Navigation Directory",
+            "id": "navigation-directory"
+          },
+          {
+            "level": 2,
+            "text": "Documentation Conventions",
+            "id": "documentation-conventions"
+          },
+          {
+            "level": 2,
+            "text": "Verifiability and Source Code Fidelity",
+            "id": "verifiability-and-source-code-fidelity"
+          }
+        ]
+      },
+      {
+        "id": "DOCUMENTATION_AUDIT_REPORT",
+        "path": "DOCUMENTATION_AUDIT_REPORT.md",
+        "title": "Documentation Audit Report",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Executive Summary",
+            "id": "1-executive-summary"
+          },
+          {
+            "level": 2,
+            "text": "2. Features Discovered & Verification Evidence Matrix",
+            "id": "2-features-discovered-verification-evidence-matrix"
+          },
+          {
+            "level": 2,
+            "text": "3. Unsupported Assumptions Avoided",
+            "id": "3-unsupported-assumptions-avoided"
+          },
+          {
+            "level": 2,
+            "text": "4. Documentation Validation Results",
+            "id": "4-documentation-validation-results"
+          },
+          {
+            "level": 2,
+            "text": "5. Recommended Next Steps for Engineering",
+            "id": "5-recommended-next-steps-for-engineering"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "product",
+    "title": "Product Architecture",
+    "icon": "layers",
+    "order": 2,
+    "items": [
+      {
+        "id": "product-product-overview",
+        "path": "product/product-overview.md",
+        "title": "Product Overview",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Executive Summary & Product Introduction",
+            "id": "1-executive-summary-product-introduction"
+          },
+          {
+            "level": 2,
+            "text": "2. Problem Statement: Why PortProbe Was Developed",
+            "id": "2-problem-statement-why-portprobe-was-developed"
+          },
+          {
+            "level": 3,
+            "text": "The Enterprise Challenges Addressed:",
+            "id": "the-enterprise-challenges-addressed"
+          },
+          {
+            "level": 2,
+            "text": "3. Product Vision and Core Objectives",
+            "id": "3-product-vision-and-core-objectives"
+          },
+          {
+            "level": 2,
+            "text": "4. Key Capabilities & Functional Matrix",
+            "id": "4-key-capabilities-functional-matrix"
+          },
+          {
+            "level": 2,
+            "text": "5. Architecture & Core Components",
+            "id": "5-architecture-core-components"
+          },
+          {
+            "level": 3,
+            "text": "Daemon Role Responsibilities:",
+            "id": "daemon-role-responsibilities"
+          },
+          {
+            "level": 3,
+            "text": "Client Probe Role Responsibilities:",
+            "id": "client-probe-role-responsibilities"
+          },
+          {
+            "level": 2,
+            "text": "6. Target Audience & Stakeholders",
+            "id": "6-target-audience-stakeholders"
+          },
+          {
+            "level": 2,
+            "text": "7. Supported Enterprise Use Cases",
+            "id": "7-supported-enterprise-use-cases"
+          },
+          {
+            "level": 2,
+            "text": "8. Comparative Analysis: PortProbe vs. Traditional Utilities",
+            "id": "8-comparative-analysis-portprobe-vs-traditional-utilities"
+          },
+          {
+            "level": 2,
+            "text": "9. Product Limitations and Explicit Non-Goals",
+            "id": "9-product-limitations-and-explicit-non-goals"
+          }
+        ]
+      },
+      {
+        "id": "product-architecture",
+        "path": "product/architecture.md",
+        "title": "System Architecture",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. High-Level System Architecture",
+            "id": "1-high-level-system-architecture"
+          },
+          {
+            "level": 2,
+            "text": "2. Component Architecture & Module Responsibilities",
+            "id": "2-component-architecture-module-responsibilities"
+          },
+          {
+            "level": 3,
+            "text": "Module Breakdown:",
+            "id": "module-breakdown"
+          },
+          {
+            "level": 2,
+            "text": "3. Asynchronous Execution & Concurrency Model",
+            "id": "3-asynchronous-execution-concurrency-model"
+          },
+          {
+            "level": 3,
+            "text": "3.1 Socket Ingestion Architecture",
+            "id": "31-socket-ingestion-architecture"
+          },
+          {
+            "level": 2,
+            "text": "4. Admission Control Pipeline Deep Dive",
+            "id": "4-admission-control-pipeline-deep-dive"
+          },
+          {
+            "level": 3,
+            "text": "Detailed Gate Mechanics:",
+            "id": "detailed-gate-mechanics"
+          },
+          {
+            "level": 2,
+            "text": "5. TCP Connection Lifecycle & Anti-Slowloris Architecture",
+            "id": "5-tcp-connection-lifecycle-anti-slowloris-architecture"
+          },
+          {
+            "level": 3,
+            "text": "5.1 Default One-Shot Mode (hold_open = false)",
+            "id": "51-default-one-shot-mode-hold_open-false"
+          },
+          {
+            "level": 3,
+            "text": "5.2 Hold-Open Diagnostic Mode (hold_open = true)",
+            "id": "52-hold-open-diagnostic-mode-hold_open-true"
+          },
+          {
+            "level": 2,
+            "text": "6. Administrative HTTP Subsystem & Telemetry Architecture",
+            "id": "6-administrative-http-subsystem-telemetry-architecture"
+          },
+          {
+            "level": 3,
+            "text": "Administrative Hardening Features:",
+            "id": "administrative-hardening-features"
+          },
+          {
+            "level": 2,
+            "text": "7. Transport Layer Security (TLS 1.3 / mTLS) Engine",
+            "id": "7-transport-layer-security-tls-13-mtls-engine"
+          },
+          {
+            "level": 3,
+            "text": "7.1 Protocol Version Enforcement",
+            "id": "71-protocol-version-enforcement"
+          },
+          {
+            "level": 3,
+            "text": "7.2 Mutual TLS (mTLS) Client Verification",
+            "id": "72-mutual-tls-mtls-client-verification"
+          },
+          {
+            "level": 3,
+            "text": "7.3 Automated X.509 Certificate Expiration Tracking",
+            "id": "73-automated-x509-certificate-expiration-tracking"
+          },
+          {
+            "level": 2,
+            "text": "8. Dynamic Configuration & Signal Architecture (Linux/Unix)",
+            "id": "8-dynamic-configuration-signal-architecture-linuxunix"
+          },
+          {
+            "level": 2,
+            "text": "9. Operating System Resource Management & Performance",
+            "id": "9-operating-system-resource-management-performance"
+          },
+          {
+            "level": 3,
+            "text": "9.1 Memory Footprint & Zero Allocation Path",
+            "id": "91-memory-footprint-zero-allocation-path"
+          },
+          {
+            "level": 3,
+            "text": "9.2 File Descriptor Utilization",
+            "id": "92-file-descriptor-utilization"
+          },
+          {
+            "level": 3,
+            "text": "9.3 Platform-Specific Socket Hardening",
+            "id": "93-platform-specific-socket-hardening"
+          }
+        ]
+      },
+      {
+        "id": "product-technical-design",
+        "path": "product/technical-design.md",
+        "title": "Technical Design",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Internal State & Memory Model",
+            "id": "1-internal-state-memory-model"
+          },
+          {
+            "level": 3,
+            "text": "1.1 State Ownership Hierarchy",
+            "id": "11-state-ownership-hierarchy"
+          },
+          {
+            "level": 2,
+            "text": "2. Token Bucket Rate Limiting Algorithm",
+            "id": "2-token-bucket-rate-limiting-algorithm"
+          },
+          {
+            "level": 3,
+            "text": "2.1 Micro-Token Mathematics",
+            "id": "21-micro-token-mathematics"
+          },
+          {
+            "level": 3,
+            "text": "2.2 Per-IP Rate Limiting & IPv6 Prefix Aggregation",
+            "id": "22-per-ip-rate-limiting-ipv6-prefix-aggregation"
+          },
+          {
+            "level": 2,
+            "text": "3. Mutual Exclusion & Poisoning Resilience",
+            "id": "3-mutual-exclusion-poisoning-resilience"
+          },
+          {
+            "level": 3,
+            "text": "3.1 Per-IP Connection Tracker (PerIpTracker)",
+            "id": "31-per-ip-connection-tracker-periptracker"
+          },
+          {
+            "level": 3,
+            "text": "3.2 Administrative Rate Limiter",
+            "id": "32-administrative-rate-limiter"
+          },
+          {
+            "level": 2,
+            "text": "4. Constant-Time Cryptographic Verification",
+            "id": "4-constant-time-cryptographic-verification"
+          },
+          {
+            "level": 2,
+            "text": "5. X.509 Certificate DER / ASN.1 Expiration Parser",
+            "id": "5-x509-certificate-der-asn1-expiration-parser"
+          },
+          {
+            "level": 2,
+            "text": "6. Multi-Port Socket Range Resolver",
+            "id": "6-multi-port-socket-range-resolver"
+          },
+          {
+            "level": 2,
+            "text": "7. Unified Stream Abstraction (ConnectionStream)",
+            "id": "7-unified-stream-abstraction-connectionstream"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "getting-started",
+    "title": "Getting Started",
+    "icon": "play-circle",
+    "order": 3,
+    "items": [
+      {
+        "id": "getting-started-prerequisites",
+        "path": "getting-started/prerequisites.md",
+        "title": "System Prerequisites",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Supported Operating Systems",
+            "id": "1-supported-operating-systems"
+          },
+          {
+            "level": 2,
+            "text": "2. Hardware and Resource Requirements",
+            "id": "2-hardware-and-resource-requirements"
+          },
+          {
+            "level": 3,
+            "text": "Minimum Hardware:",
+            "id": "minimum-hardware"
+          },
+          {
+            "level": 3,
+            "text": "Recommended Production Hardware (High Concurrency: 1,000+ sessions):",
+            "id": "recommended-production-hardware-high-concurrency-1000-sessions"
+          },
+          {
+            "level": 2,
+            "text": "3. Toolchain & Build Prerequisites (Source Builds)",
+            "id": "3-toolchain-build-prerequisites-source-builds"
+          },
+          {
+            "level": 3,
+            "text": "3.1 Rust Toolchain",
+            "id": "31-rust-toolchain"
+          },
+          {
+            "level": 3,
+            "text": "3.2 Operating System Build Dependencies",
+            "id": "32-operating-system-build-dependencies"
+          },
+          {
+            "level": 2,
+            "text": "4. Network and Firewall Prerequisites",
+            "id": "4-network-and-firewall-prerequisites"
+          }
+        ]
+      },
+      {
+        "id": "getting-started-installation",
+        "path": "getting-started/installation.md",
+        "title": "Installation Guide",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Installation Overview",
+            "id": "1-installation-overview"
+          },
+          {
+            "level": 2,
+            "text": "2. Building from Source",
+            "id": "2-building-from-source"
+          },
+          {
+            "level": 3,
+            "text": "Step 1: Clone the Repository",
+            "id": "step-1-clone-the-repository"
+          },
+          {
+            "level": 3,
+            "text": "Step 2: Compile the Release Binary",
+            "id": "step-2-compile-the-release-binary"
+          },
+          {
+            "level": 3,
+            "text": "Step 3: Verify Binary Build",
+            "id": "step-3-verify-binary-build"
+          },
+          {
+            "level": 2,
+            "text": "3. Linux System-Wide Binary Installation",
+            "id": "3-linux-system-wide-binary-installation"
+          },
+          {
+            "level": 3,
+            "text": "Optional: Grant Privileged Port Binding Capability",
+            "id": "optional-grant-privileged-port-binding-capability"
+          },
+          {
+            "level": 2,
+            "text": "4. Container Deployment (Docker & Podman)",
+            "id": "4-container-deployment-docker-podman"
+          },
+          {
+            "level": 3,
+            "text": "Step 1: Build Container Image",
+            "id": "step-1-build-container-image"
+          },
+          {
+            "level": 3,
+            "text": "Step 2: Run Container",
+            "id": "step-2-run-container"
+          },
+          {
+            "level": 3,
+            "text": "Step 3: Inspect Container Health Status",
+            "id": "step-3-inspect-container-health-status"
+          },
+          {
+            "level": 2,
+            "text": "5. Linux systemd Service Installation",
+            "id": "5-linux-systemd-service-installation"
+          },
+          {
+            "level": 3,
+            "text": "Step 1: Create Dedicated Service User",
+            "id": "step-1-create-dedicated-service-user"
+          },
+          {
+            "level": 3,
+            "text": "Step 2: Provision Configuration Directory",
+            "id": "step-2-provision-configuration-directory"
+          },
+          {
+            "level": 3,
+            "text": "Step 3: Install systemd Unit File",
+            "id": "step-3-install-systemd-unit-file"
+          },
+          {
+            "level": 3,
+            "text": "Step 4: Enable and Start Service",
+            "id": "step-4-enable-and-start-service"
+          },
+          {
+            "level": 2,
+            "text": "6. Windows Installation",
+            "id": "6-windows-installation"
+          },
+          {
+            "level": 3,
+            "text": "Step 1: Binary Placement",
+            "id": "step-1-binary-placement"
+          },
+          {
+            "level": 3,
+            "text": "Step 2: Add to System PATH",
+            "id": "step-2-add-to-system-path"
+          },
+          {
+            "level": 3,
+            "text": "Step 3: Windows Background Service Setup (via NSSM)",
+            "id": "step-3-windows-background-service-setup-via-nssm"
+          },
+          {
+            "level": 2,
+            "text": "7. Uninstallation",
+            "id": "7-uninstallation"
+          },
+          {
+            "level": 3,
+            "text": "Linux",
+            "id": "linux"
+          },
+          {
+            "level": 3,
+            "text": "Windows",
+            "id": "windows"
+          }
+        ]
+      },
+      {
+        "id": "getting-started-quick-start",
+        "path": "getting-started/quick-start.md",
+        "title": "Quick-Start Guide",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Quick-Start Objective",
+            "id": "1-quick-start-objective"
+          },
+          {
+            "level": 2,
+            "text": "2. Step 1: Start the PortProbe Daemon",
+            "id": "2-step-1-start-the-portprobe-daemon"
+          },
+          {
+            "level": 3,
+            "text": "Expected Terminal Output:",
+            "id": "expected-terminal-output"
+          },
+          {
+            "level": 2,
+            "text": "3. Step 2: Verify Reachability with Client Probe Mode",
+            "id": "3-step-2-verify-reachability-with-client-probe-mode"
+          },
+          {
+            "level": 3,
+            "text": "Expected Output:",
+            "id": "expected-output"
+          },
+          {
+            "level": 2,
+            "text": "4. Step 3: Verify Using External Client Tools",
+            "id": "4-step-3-verify-using-external-client-tools"
+          },
+          {
+            "level": 3,
+            "text": "Using Netcat (Linux / macOS):",
+            "id": "using-netcat-linux-macos"
+          },
+          {
+            "level": 3,
+            "text": "Using PowerShell (Windows):",
+            "id": "using-powershell-windows"
+          },
+          {
+            "level": 2,
+            "text": "5. Step 4: Inspect Server Daemon Logs",
+            "id": "5-step-4-inspect-server-daemon-logs"
+          },
+          {
+            "level": 2,
+            "text": "6. Step 5: Graceful Shutdown",
+            "id": "6-step-5-graceful-shutdown"
+          },
+          {
+            "level": 3,
+            "text": "Expected Shutdown Output:",
+            "id": "expected-shutdown-output"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "user-guide",
+    "title": "User Guide",
+    "icon": "terminal",
+    "order": 4,
+    "items": [
+      {
+        "id": "user-guide-overview",
+        "path": "user-guide/overview.md",
+        "title": "User Guide Overview",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Guide Structure & Navigation",
+            "id": "1-guide-structure-navigation"
+          },
+          {
+            "level": 2,
+            "text": "2. Core Concepts and Terminology",
+            "id": "2-core-concepts-and-terminology"
+          }
+        ]
+      },
+      {
+        "id": "user-guide-daemon-management",
+        "path": "user-guide/daemon-management.md",
+        "title": "Daemon Management",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Starting the Daemon",
+            "id": "1-starting-the-daemon"
+          },
+          {
+            "level": 3,
+            "text": "1.1 Single Port Listening",
+            "id": "11-single-port-listening"
+          },
+          {
+            "level": 3,
+            "text": "1.2 Listening on All Network Interfaces",
+            "id": "12-listening-on-all-network-interfaces"
+          },
+          {
+            "level": 2,
+            "text": "2. Multi-Port and Port Range Listening",
+            "id": "2-multi-port-and-port-range-listening"
+          },
+          {
+            "level": 3,
+            "text": "Syntax: --ports <PORTS>",
+            "id": "syntax-ports-ports"
+          },
+          {
+            "level": 3,
+            "text": "Safety Rules & Validation:",
+            "id": "safety-rules-validation"
+          },
+          {
+            "level": 3,
+            "text": "Startup Log Output:",
+            "id": "startup-log-output"
+          },
+          {
+            "level": 2,
+            "text": "3. Dynamic Configuration Reload (SIGHUP)",
+            "id": "3-dynamic-configuration-reload-sighup"
+          },
+          {
+            "level": 3,
+            "text": "Triggering SIGHUP:",
+            "id": "triggering-sighup"
+          },
+          {
+            "level": 3,
+            "text": "Dynamically Reloadable Parameters:",
+            "id": "dynamically-reloadable-parameters"
+          },
+          {
+            "level": 3,
+            "text": "Reload Log Output:",
+            "id": "reload-log-output"
+          },
+          {
+            "level": 2,
+            "text": "4. Privilege Dropping (POSIX / Linux)",
+            "id": "4-privilege-dropping-posix-linux"
+          },
+          {
+            "level": 3,
+            "text": "How It Works:",
+            "id": "how-it-works"
+          },
+          {
+            "level": 2,
+            "text": "5. Graceful Daemon Shutdown",
+            "id": "5-graceful-daemon-shutdown"
+          },
+          {
+            "level": 3,
+            "text": "Shutdown Sequence:",
+            "id": "shutdown-sequence"
+          }
+        ]
+      },
+      {
+        "id": "user-guide-client-usage",
+        "path": "user-guide/client-usage.md",
+        "title": "Client Probe Mode",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Client Health Check Overview",
+            "id": "1-client-health-check-overview"
+          },
+          {
+            "level": 3,
+            "text": "Key Characteristics:",
+            "id": "key-characteristics"
+          },
+          {
+            "level": 2,
+            "text": "2. Basic Client Health Check",
+            "id": "2-basic-client-health-check"
+          },
+          {
+            "level": 3,
+            "text": "Success Output:",
+            "id": "success-output"
+          },
+          {
+            "level": 3,
+            "text": "Failure Output (Connection Refused):",
+            "id": "failure-output-connection-refused"
+          },
+          {
+            "level": 3,
+            "text": "Failure Output (CIDR Rejected):",
+            "id": "failure-output-cidr-rejected"
+          },
+          {
+            "level": 2,
+            "text": "3. Encrypted TLS Client Probing",
+            "id": "3-encrypted-tls-client-probing"
+          },
+          {
+            "level": 3,
+            "text": "Argument Details:",
+            "id": "argument-details"
+          },
+          {
+            "level": 3,
+            "text": "TLS Verification Failure Example (Invalid Domain / Hostname Mismatch):",
+            "id": "tls-verification-failure-example-invalid-domain-hostname-mismatch"
+          },
+          {
+            "level": 2,
+            "text": "4. Integrating Client Probe into Scripts & CI/CD",
+            "id": "4-integrating-client-probe-into-scripts-cicd"
+          }
+        ]
+      },
+      {
+        "id": "user-guide-connectivity-testing",
+        "path": "user-guide/connectivity-testing.md",
+        "title": "Connectivity Testing",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Interoperability Overview",
+            "id": "1-interoperability-overview"
+          },
+          {
+            "level": 2,
+            "text": "2. Testing with Netcat (nc)",
+            "id": "2-testing-with-netcat-nc"
+          },
+          {
+            "level": 3,
+            "text": "Basic Banner Verification:",
+            "id": "basic-banner-verification"
+          },
+          {
+            "level": 3,
+            "text": "Silent Port Probing (Check only):",
+            "id": "silent-port-probing-check-only"
+          },
+          {
+            "level": 2,
+            "text": "3. Testing with Windows PowerShell",
+            "id": "3-testing-with-windows-powershell"
+          },
+          {
+            "level": 3,
+            "text": "Quick TCP Port Check:",
+            "id": "quick-tcp-port-check"
+          },
+          {
+            "level": 3,
+            "text": "Raw Socket Banner Read in PowerShell:",
+            "id": "raw-socket-banner-read-in-powershell"
+          },
+          {
+            "level": 2,
+            "text": "4. Testing with cURL & Load Balancers",
+            "id": "4-testing-with-curl-load-balancers"
+          },
+          {
+            "level": 3,
+            "text": "Testing Administrative Endpoints via cURL:",
+            "id": "testing-administrative-endpoints-via-curl"
+          },
+          {
+            "level": 3,
+            "text": "Load Balancer Probes (AWS NLB, F5 BIG-IP):",
+            "id": "load-balancer-probes-aws-nlb-f5-big-ip"
+          }
+        ]
+      },
+      {
+        "id": "user-guide-concurrency",
+        "path": "user-guide/concurrency.md",
+        "title": "Concurrency & Limits",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Concurrency Controls Overview",
+            "id": "1-concurrency-controls-overview"
+          },
+          {
+            "level": 2,
+            "text": "2. Tuning for Enterprise Scenarios",
+            "id": "2-tuning-for-enterprise-scenarios"
+          },
+          {
+            "level": 3,
+            "text": "Scenario A: High-Concurrency Enterprise Gateway Testing",
+            "id": "scenario-a-high-concurrency-enterprise-gateway-testing"
+          },
+          {
+            "level": 3,
+            "text": "Scenario B: Restrictive Diagnostic Listener (Single-Probe Isolation)",
+            "id": "scenario-b-restrictive-diagnostic-listener-single-probe-isolation"
+          },
+          {
+            "level": 2,
+            "text": "3. Rate Limiting Behavior & Rejection Responses",
+            "id": "3-rate-limiting-behavior-rejection-responses"
+          },
+          {
+            "level": 3,
+            "text": "Silent Rejection Mode (silent_reject = true, Default):",
+            "id": "silent-rejection-mode-silent_reject-true-default"
+          },
+          {
+            "level": 3,
+            "text": "Verbose Rejection Mode (silent_reject = false):",
+            "id": "verbose-rejection-mode-silent_reject-false"
+          }
+        ]
+      },
+      {
+        "id": "user-guide-configuration",
+        "path": "user-guide/configuration.md",
+        "title": "Configuration Architecture",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Configuration Precedence Model",
+            "id": "1-configuration-precedence-model"
+          },
+          {
+            "level": 3,
+            "text": "Precedence Rules:",
+            "id": "precedence-rules"
+          },
+          {
+            "level": 2,
+            "text": "2. TOML Configuration File Schema",
+            "id": "2-toml-configuration-file-schema"
+          },
+          {
+            "level": 2,
+            "text": "3. Secret Management & File Permissions",
+            "id": "3-secret-management-file-permissions"
+          },
+          {
+            "level": 3,
+            "text": "Enforcing Permissions on POSIX Systems:",
+            "id": "enforcing-permissions-on-posix-systems"
+          }
+        ]
+      },
+      {
+        "id": "user-guide-practical-examples",
+        "path": "user-guide/practical-examples.md",
+        "title": "Practical Recipes",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Practical Recipe Collection",
+            "id": "1-practical-recipe-collection"
+          },
+          {
+            "level": 3,
+            "text": "Recipe 1: Database Firewall Port Validation (Oracle TCP 1521)",
+            "id": "recipe-1-database-firewall-port-validation-oracle-tcp-1521"
+          },
+          {
+            "level": 3,
+            "text": "Recipe 2: Multi-Port Web Proxy Verification (Ports 80, 443, 8080\u20138085)",
+            "id": "recipe-2-multi-port-web-proxy-verification-ports-80-443-80808085"
+          },
+          {
+            "level": 3,
+            "text": "Recipe 3: Strict Banking TLS 1.3-Only Encrypted Listener",
+            "id": "recipe-3-strict-banking-tls-13-only-encrypted-listener"
+          },
+          {
+            "level": 3,
+            "text": "Recipe 4: Stress-Testing Load Balancer Concurrency Limits",
+            "id": "recipe-4-stress-testing-load-balancer-concurrency-limits"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "reference",
+    "title": "Reference Manuals",
+    "icon": "file-code",
+    "order": 5,
+    "items": [
+      {
+        "id": "reference-cli-reference",
+        "path": "reference/cli-reference.md",
+        "title": "CLI Reference",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. CLI Command Overview",
+            "id": "1-cli-command-overview"
+          },
+          {
+            "level": 2,
+            "text": "2. Quick-Reference Option Matrix",
+            "id": "2-quick-reference-option-matrix"
+          },
+          {
+            "level": 2,
+            "text": "3. Detailed Parameter Specifications",
+            "id": "3-detailed-parameter-specifications"
+          },
+          {
+            "level": 3,
+            "text": "-p, --port <PORT>",
+            "id": "p-port-port"
+          },
+          {
+            "level": 3,
+            "text": "--ports <PORTS>",
+            "id": "ports-ports"
+          },
+          {
+            "level": 3,
+            "text": "-b, --bind <BIND>",
+            "id": "b-bind-bind"
+          },
+          {
+            "level": 3,
+            "text": "--admin-token-file <PATH>",
+            "id": "admin-token-file-path"
+          }
+        ]
+      },
+      {
+        "id": "reference-configuration-reference",
+        "path": "reference/configuration-reference.md",
+        "title": "Configuration Reference",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Configuration Parameter Reference",
+            "id": "1-configuration-parameter-reference"
+          },
+          {
+            "level": 2,
+            "text": "2. Complete Enterprise Production Configuration Example",
+            "id": "2-complete-enterprise-production-configuration-example"
+          }
+        ]
+      },
+      {
+        "id": "reference-error-reference",
+        "path": "reference/error-reference.md",
+        "title": "Error Reference",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Startup and Configuration Errors",
+            "id": "1-startup-and-configuration-errors"
+          },
+          {
+            "level": 2,
+            "text": "2. Network Banners (Verbose Mode: silent_reject = false)",
+            "id": "2-network-banners-verbose-mode-silent_reject-false"
+          },
+          {
+            "level": 2,
+            "text": "3. Administrative HTTP Status Codes (--admin-port)",
+            "id": "3-administrative-http-status-codes-admin-port"
+          }
+        ]
+      },
+      {
+        "id": "reference-exit-codes",
+        "path": "reference/exit-codes.md",
+        "title": "Exit Codes",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Process Exit Code Mapping",
+            "id": "1-process-exit-code-mapping"
+          },
+          {
+            "level": 2,
+            "text": "2. Using Exit Codes in Automation",
+            "id": "2-using-exit-codes-in-automation"
+          },
+          {
+            "level": 3,
+            "text": "Bash Pipeline Evaluation:",
+            "id": "bash-pipeline-evaluation"
+          },
+          {
+            "level": 3,
+            "text": "PowerShell Pipeline Evaluation:",
+            "id": "powershell-pipeline-evaluation"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "deployment",
+    "title": "Deployment & Operations",
+    "icon": "server",
+    "order": 6,
+    "items": [
+      {
+        "id": "deployment-deployment-guide",
+        "path": "deployment/deployment-guide.md",
+        "title": "Deployment Architecture",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Enterprise Deployment Topologies",
+            "id": "1-enterprise-deployment-topologies"
+          },
+          {
+            "level": 3,
+            "text": "Topology 1: On-Demand Diagnostic Probe (Ephemeral)",
+            "id": "topology-1-on-demand-diagnostic-probe-ephemeral"
+          },
+          {
+            "level": 3,
+            "text": "Topology 2: Long-Running Dedicated Connectivity Canary (systemd)",
+            "id": "topology-2-long-running-dedicated-connectivity-canary-systemd"
+          },
+          {
+            "level": 3,
+            "text": "Topology 3: Containerized Microservice Pod (Kubernetes / OCI)",
+            "id": "topology-3-containerized-microservice-pod-kubernetes-oci"
+          },
+          {
+            "level": 2,
+            "text": "2. High Availability & Redundancy",
+            "id": "2-high-availability-redundancy"
+          }
+        ]
+      },
+      {
+        "id": "deployment-linux-service",
+        "path": "deployment/linux-service.md",
+        "title": "Linux Service (systemd)",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Production systemd Configuration",
+            "id": "1-production-systemd-configuration"
+          },
+          {
+            "level": 3,
+            "text": "Service Unit File (/etc/systemd/system/portprobe.service):",
+            "id": "service-unit-file-etcsystemdsystemportprobeservice"
+          },
+          {
+            "level": 2,
+            "text": "2. Step-by-Step Installation & Management",
+            "id": "2-step-by-step-installation-management"
+          },
+          {
+            "level": 3,
+            "text": "Step 1: Create Dedicated Service Account",
+            "id": "step-1-create-dedicated-service-account"
+          },
+          {
+            "level": 3,
+            "text": "Step 2: Install Binary and Service Unit",
+            "id": "step-2-install-binary-and-service-unit"
+          },
+          {
+            "level": 3,
+            "text": "Step 3: Configure Permissions",
+            "id": "step-3-configure-permissions"
+          },
+          {
+            "level": 3,
+            "text": "Step 4: Reload, Enable, and Start",
+            "id": "step-4-reload-enable-and-start"
+          },
+          {
+            "level": 3,
+            "text": "Step 5: Verify Service Status and Logs",
+            "id": "step-5-verify-service-status-and-logs"
+          },
+          {
+            "level": 3,
+            "text": "Step 6: Live Configuration Reload",
+            "id": "step-6-live-configuration-reload"
+          }
+        ]
+      },
+      {
+        "id": "deployment-production-best-practices",
+        "path": "deployment/production-best-practices.md",
+        "title": "Production Best Practices",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Production Security Checklist",
+            "id": "1-production-security-checklist"
+          },
+          {
+            "level": 2,
+            "text": "2. Secrets Management & Rotation",
+            "id": "2-secrets-management-rotation"
+          },
+          {
+            "level": 3,
+            "text": "Admin Token Rotation:",
+            "id": "admin-token-rotation"
+          },
+          {
+            "level": 3,
+            "text": "TLS Certificate Rotation:",
+            "id": "tls-certificate-rotation"
+          }
+        ]
+      },
+      {
+        "id": "deployment-performance-tuning",
+        "path": "deployment/performance-tuning.md",
+        "title": "Performance Tuning",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. High-Concurrency Kernel Tuning (Linux)",
+            "id": "1-high-concurrency-kernel-tuning-linux"
+          },
+          {
+            "level": 2,
+            "text": "2. Process File Descriptor Limits (ulimit)",
+            "id": "2-process-file-descriptor-limits-ulimit"
+          },
+          {
+            "level": 3,
+            "text": "In systemd (/etc/systemd/system/portprobe.service):",
+            "id": "in-systemd-etcsystemdsystemportprobeservice"
+          },
+          {
+            "level": 3,
+            "text": "In Shell (Ad-Hoc / Terminal Execution):",
+            "id": "in-shell-ad-hoc-terminal-execution"
+          },
+          {
+            "level": 2,
+            "text": "3. Tokio Runtime Optimization",
+            "id": "3-tokio-runtime-optimization"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "examples",
+    "title": "Real-World Scenarios",
+    "icon": "shield-check",
+    "order": 7,
+    "items": [
+      {
+        "id": "examples-firewall-validation",
+        "path": "examples/firewall-validation.md",
+        "title": "Firewall Rule Validation",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Business Context & Objective",
+            "id": "1-business-context-objective"
+          },
+          {
+            "level": 2,
+            "text": "2. Infrastructure Topology",
+            "id": "2-infrastructure-topology"
+          },
+          {
+            "level": 2,
+            "text": "3. Configuration & Execution",
+            "id": "3-configuration-execution"
+          },
+          {
+            "level": 3,
+            "text": "Step 1: Start PortProbe on the Target Database Server (10.200.20.50)",
+            "id": "step-1-start-portprobe-on-the-target-database-server-102002050"
+          },
+          {
+            "level": 3,
+            "text": "Step 2: Validate Reachability from the Authorized App Server (10.100.10.25)",
+            "id": "step-2-validate-reachability-from-the-authorized-app-server-101001025"
+          },
+          {
+            "level": 3,
+            "text": "Step 3: Validate Firewall Policy Enforcement from an Unauthorized Host (10.100.10.99)",
+            "id": "step-3-validate-firewall-policy-enforcement-from-an-unauthorized-host-101001099"
+          },
+          {
+            "level": 2,
+            "text": "4. Log Analysis & Audit Evidence",
+            "id": "4-log-analysis-audit-evidence"
+          }
+        ]
+      },
+      {
+        "id": "examples-load-balancer-validation",
+        "path": "examples/load-balancer-validation.md",
+        "title": "Load Balancer Probing",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Business Context & Objective",
+            "id": "1-business-context-objective"
+          },
+          {
+            "level": 2,
+            "text": "2. Infrastructure Topology",
+            "id": "2-infrastructure-topology"
+          },
+          {
+            "level": 2,
+            "text": "3. Configuration & Execution",
+            "id": "3-configuration-execution"
+          },
+          {
+            "level": 3,
+            "text": "Step 1: Deploy PortProbe on Backend Nodes 01 & 02",
+            "id": "step-1-deploy-portprobe-on-backend-nodes-01-02"
+          },
+          {
+            "level": 3,
+            "text": "Step 2: Configure Load Balancer Health Check",
+            "id": "step-2-configure-load-balancer-health-check"
+          },
+          {
+            "level": 3,
+            "text": "Step 3: Validate Load Balancer Target Health",
+            "id": "step-3-validate-load-balancer-target-health"
+          }
+        ]
+      },
+      {
+        "id": "examples-infrastructure-validation",
+        "path": "examples/infrastructure-validation.md",
+        "title": "Infrastructure Validation",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Business Context & Objective",
+            "id": "1-business-context-objective"
+          },
+          {
+            "level": 2,
+            "text": "2. Infrastructure Topology",
+            "id": "2-infrastructure-topology"
+          },
+          {
+            "level": 2,
+            "text": "3. Configuration & Execution",
+            "id": "3-configuration-execution"
+          },
+          {
+            "level": 3,
+            "text": "Step 1: Start Multi-Port PortProbe on Cloud Target (10.50.10.100)",
+            "id": "step-1-start-multi-port-portprobe-on-cloud-target-105010100"
+          },
+          {
+            "level": 3,
+            "text": "Step 2: Automated Verification Script on On-Premises Host",
+            "id": "step-2-automated-verification-script-on-on-premises-host"
+          },
+          {
+            "level": 3,
+            "text": "Expected Output:",
+            "id": "expected-output"
+          }
+        ]
+      },
+      {
+        "id": "examples-ci-cd-integration",
+        "path": "examples/ci-cd-integration.md",
+        "title": "CI/CD Pipeline Integration",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Business Context & Objective",
+            "id": "1-business-context-objective"
+          },
+          {
+            "level": 2,
+            "text": "2. GitHub Actions Integration Example",
+            "id": "2-github-actions-integration-example"
+          },
+          {
+            "level": 3,
+            "text": "Pipeline Configuration (.github/workflows/deploy.yml):",
+            "id": "pipeline-configuration-githubworkflowsdeployyml"
+          },
+          {
+            "level": 2,
+            "text": "3. GitLab CI Integration Example",
+            "id": "3-gitlab-ci-integration-example"
+          },
+          {
+            "level": 3,
+            "text": "Pipeline Configuration (.gitlab-ci.yml):",
+            "id": "pipeline-configuration-gitlab-ciyml"
+          },
+          {
+            "level": 3,
+            "text": "Result:",
+            "id": "result"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "security",
+    "title": "Security & Compliance",
+    "icon": "lock",
+    "order": 8,
+    "items": [
+      {
+        "id": "security-security-guide",
+        "path": "security/security-guide.md",
+        "title": "Security Architecture",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Security Architecture & Threat Model",
+            "id": "1-security-architecture-threat-model"
+          },
+          {
+            "level": 2,
+            "text": "2. Threat Modeling & Mitigation Analysis",
+            "id": "2-threat-modeling-mitigation-analysis"
+          },
+          {
+            "level": 2,
+            "text": "3. Cryptographic and Transport Security",
+            "id": "3-cryptographic-and-transport-security"
+          },
+          {
+            "level": 2,
+            "text": "4. Compliance Mapping Matrix",
+            "id": "4-compliance-mapping-matrix"
+          },
+          {
+            "level": 2,
+            "text": "5. Security Boundaries and Limitations",
+            "id": "5-security-boundaries-and-limitations"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "troubleshooting",
+    "title": "Troubleshooting & FAQ",
+    "icon": "help-circle",
+    "order": 9,
+    "items": [
+      {
+        "id": "troubleshooting-troubleshooting-guide",
+        "path": "troubleshooting/troubleshooting-guide.md",
+        "title": "Troubleshooting Guide",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Troubleshooting Decision Flowchart",
+            "id": "1-troubleshooting-decision-flowchart"
+          },
+          {
+            "level": 2,
+            "text": "2. Detailed Diagnostic Scenarios & Resolutions",
+            "id": "2-detailed-diagnostic-scenarios-resolutions"
+          },
+          {
+            "level": 3,
+            "text": "Scenario 1: Daemon Fails to Start - \"Address already in use\"",
+            "id": "scenario-1-daemon-fails-to-start-address-already-in-use"
+          },
+          {
+            "level": 3,
+            "text": "Scenario 2: Client Receives \"Connection Refused\"",
+            "id": "scenario-2-client-receives-connection-refused"
+          },
+          {
+            "level": 3,
+            "text": "Scenario 3: Client Receives \"Connection Timeout\"",
+            "id": "scenario-3-client-receives-connection-timeout"
+          },
+          {
+            "level": 3,
+            "text": "Scenario 4: Unauthorized Connections Dropped Silently",
+            "id": "scenario-4-unauthorized-connections-dropped-silently"
+          },
+          {
+            "level": 3,
+            "text": "Scenario 5: Insecure File Permissions Error",
+            "id": "scenario-5-insecure-file-permissions-error"
+          }
+        ]
+      },
+      {
+        "id": "troubleshooting-faq",
+        "path": "troubleshooting/faq.md",
+        "title": "Frequently Asked Questions",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. General Questions",
+            "id": "1-general-questions"
+          },
+          {
+            "level": 3,
+            "text": "What is PortProbe?",
+            "id": "what-is-portprobe"
+          },
+          {
+            "level": 3,
+            "text": "How does PortProbe differ from Netcat (nc -l)?",
+            "id": "how-does-portprobe-differ-from-netcat-nc-l"
+          },
+          {
+            "level": 3,
+            "text": "Does PortProbe support UDP?",
+            "id": "does-portprobe-support-udp"
+          },
+          {
+            "level": 2,
+            "text": "2. Security Questions",
+            "id": "2-security-questions"
+          },
+          {
+            "level": 3,
+            "text": "Can PortProbe be exploited to execute remote commands?",
+            "id": "can-portprobe-be-exploited-to-execute-remote-commands"
+          },
+          {
+            "level": 3,
+            "text": "Why does PortProbe drop connections without sending an error banner?",
+            "id": "why-does-portprobe-drop-connections-without-sending-an-error-banner"
+          },
+          {
+            "level": 3,
+            "text": "How does PortProbe authenticate administrative requests?",
+            "id": "how-does-portprobe-authenticate-administrative-requests"
+          },
+          {
+            "level": 2,
+            "text": "3. Operations & Configuration",
+            "id": "3-operations-configuration"
+          },
+          {
+            "level": 3,
+            "text": "How can I reload firewall CIDR rules without restarting PortProbe?",
+            "id": "how-can-i-reload-firewall-cidr-rules-without-restarting-portprobe"
+          },
+          {
+            "level": 3,
+            "text": "Why do I get \"Too many open files\" errors?",
+            "id": "why-do-i-get-too-many-open-files-errors"
+          },
+          {
+            "level": 3,
+            "text": "Can I run PortProbe as a Windows Service?",
+            "id": "can-i-run-portprobe-as-a-windows-service"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "development",
+    "title": "Developer Resources",
+    "icon": "code-2",
+    "order": 10,
+    "items": [
+      {
+        "id": "development-developer-guide",
+        "path": "development/developer-guide.md",
+        "title": "Developer Architecture",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Codebase Organization",
+            "id": "1-codebase-organization"
+          },
+          {
+            "level": 2,
+            "text": "2. Core Dependencies & Technology Stack",
+            "id": "2-core-dependencies-technology-stack"
+          },
+          {
+            "level": 2,
+            "text": "3. Coding Conventions & Invariants",
+            "id": "3-coding-conventions-invariants"
+          }
+        ]
+      },
+      {
+        "id": "development-build-and-test",
+        "path": "development/build-and-test.md",
+        "title": "Build & CI Quality Gates",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Local Development Workflows",
+            "id": "1-local-development-workflows"
+          },
+          {
+            "level": 3,
+            "text": "1.1 Building",
+            "id": "11-building"
+          },
+          {
+            "level": 3,
+            "text": "1.2 Code Formatting & Linting",
+            "id": "12-code-formatting-linting"
+          },
+          {
+            "level": 2,
+            "text": "2. Test Execution & Regression Suite",
+            "id": "2-test-execution-regression-suite"
+          },
+          {
+            "level": 3,
+            "text": "Run All Tests:",
+            "id": "run-all-tests"
+          },
+          {
+            "level": 3,
+            "text": "Run Tests with Verbose Output:",
+            "id": "run-tests-with-verbose-output"
+          },
+          {
+            "level": 3,
+            "text": "Test Suite Structure:",
+            "id": "test-suite-structure"
+          },
+          {
+            "level": 2,
+            "text": "3. Security Auditing & Supply Chain Verification",
+            "id": "3-security-auditing-supply-chain-verification"
+          },
+          {
+            "level": 2,
+            "text": "4. Continuous Integration (CI) Pipeline",
+            "id": "4-continuous-integration-ci-pipeline"
+          }
+        ]
+      },
+      {
+        "id": "development-contributing",
+        "path": "development/contributing.md",
+        "title": "Contributing Guidelines",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Contribution Principles",
+            "id": "1-contribution-principles"
+          },
+          {
+            "level": 3,
+            "text": "Guiding Principles:",
+            "id": "guiding-principles"
+          },
+          {
+            "level": 2,
+            "text": "2. Pull Request Submission Checklist",
+            "id": "2-pull-request-submission-checklist"
+          },
+          {
+            "level": 2,
+            "text": "3. Reporting Security Vulnerabilities",
+            "id": "3-reporting-security-vulnerabilities"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "release-notes",
+    "title": "Release Notes",
+    "icon": "git-branch",
+    "order": 11,
+    "items": [
+      {
+        "id": "release-notes-changelog",
+        "path": "release-notes/changelog.md",
+        "title": "Changelog & History",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Version 2.0.0 Release Summary",
+            "id": "1-version-200-release-summary"
+          },
+          {
+            "level": 3,
+            "text": "Key Highlights of Version 2.0.0:",
+            "id": "key-highlights-of-version-200"
+          },
+          {
+            "level": 2,
+            "text": "2. Comprehensive Changelog",
+            "id": "2-comprehensive-changelog"
+          },
+          {
+            "level": 3,
+            "text": "Version 2.0.0 (Current Release)",
+            "id": "version-200-current-release"
+          },
+          {
+            "level": 3,
+            "text": "Version 1.0.0 (Legacy Baseline)",
+            "id": "version-100-legacy-baseline"
+          }
+        ]
+      },
+      {
+        "id": "release-notes-known-limitations",
+        "path": "release-notes/known-limitations.md",
+        "title": "Known Limitations",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Verified Implementation Gaps & Limitations",
+            "id": "1-verified-implementation-gaps-limitations"
+          },
+          {
+            "level": 3,
+            "text": "1.1 Windows Service Flag (--service)",
+            "id": "11-windows-service-flag-service"
+          },
+          {
+            "level": 3,
+            "text": "1.2 Administrative Server TLS",
+            "id": "12-administrative-server-tls"
+          },
+          {
+            "level": 3,
+            "text": "1.3 Transport Protocol Scope (No UDP Support)",
+            "id": "13-transport-protocol-scope-no-udp-support"
+          },
+          {
+            "level": 3,
+            "text": "1.4 Windows File Permission Validation",
+            "id": "14-windows-file-permission-validation"
+          },
+          {
+            "level": 3,
+            "text": "1.5 Dynamic SIGHUP Reload on Windows",
+            "id": "15-dynamic-sighup-reload-on-windows"
+          }
+        ]
+      },
+      {
+        "id": "release-notes-roadmap",
+        "path": "release-notes/roadmap.md",
+        "title": "Product Roadmap",
+        "headings": [
+          {
+            "level": 2,
+            "text": "1. Roadmap Evolution & Planned Capabilities",
+            "id": "1-roadmap-evolution-planned-capabilities"
+          },
+          {
+            "level": 2,
+            "text": "2. Release Milestones & Feature Breakdown",
+            "id": "2-release-milestones-feature-breakdown"
+          },
+          {
+            "level": 3,
+            "text": "Version 2.1.0 (Q1 2027)",
+            "id": "version-210-q1-2027"
+          },
+          {
+            "level": 3,
+            "text": "Version 2.2.0 (Q2 2027)",
+            "id": "version-220-q2-2027"
+          },
+          {
+            "level": 3,
+            "text": "Version 3.0.0 (Q4 2027)",
+            "id": "version-300-q4-2027"
+          }
+        ]
+      }
+    ]
+  }
+]

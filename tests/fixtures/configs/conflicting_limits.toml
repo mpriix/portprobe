@@ -1,0 +1,4 @@
+# Conflicting Connection Limits (per-ip > global)
+port = 8080
+max_connections = 10
+max_connections_per_ip = 50

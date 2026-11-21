@@ -1,0 +1,4 @@
+# Conflicting Rate Limits (per-ip rate > global rate)
+port = 8080
+max_rate = 10
+max_rate_per_ip = 25

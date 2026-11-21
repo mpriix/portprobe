@@ -1,0 +1,5 @@
+# Malformed TOML syntax
+port = 8080
+bind = "127.0.0.1"
+unclosed_string = "missing quote
+timeout = 30

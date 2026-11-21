@@ -1,0 +1,163 @@
+/* ==============================================================================
+   PortProbe Documentation Theme Variables
+   Light and Dark enterprise color palettes inspired by HashiCorp & Grafana
+   ============================================================================== */
+
+:root {
+  /* Font Families */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Typography Scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+
+  /* Layout Dimensions */
+  --header-height: 64px;
+  --sidebar-width: 290px;
+  --toc-width: 250px;
+  --content-max-width: 900px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+
+  /* Border Radii */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+  --radius-full: 9999px;
+}
+
+/* Light Theme Variables */
+[data-theme="light"] {
+  --color-bg: #FFFFFF;
+  --color-bg-secondary: #F8FAFC;
+  --color-bg-tertiary: #F1F5F9;
+  
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F8FAFC;
+  --color-surface-active: #F1F5F9;
+
+  --color-border: #E2E8F0;
+  --color-border-subtle: #EDF2F7;
+  --color-border-strong: #CBD5E1;
+
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748B;
+  --color-text-dim: #94A3B8;
+
+  --color-primary: #0284C7;
+  --color-primary-hover: #0369A1;
+  --color-primary-light: #E0F2FE;
+  --color-primary-border: #BAE6FD;
+
+  --color-accent: #0D9488;
+  --color-accent-light: #CCFBF1;
+
+  /* Code Blocks */
+  --color-code-bg: #0F172A;
+  --color-code-header-bg: #1E293B;
+  --color-code-text: #F8FAFC;
+  --color-inline-code-bg: #F1F5F9;
+  --color-inline-code-text: #0284C7;
+  --color-inline-code-border: #E2E8F0;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --shadow-modal: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+  /* Alert Callouts */
+  --alert-note-bg: #EFF6FF;
+  --alert-note-border: #3B82F6;
+  --alert-note-text: #1E40AF;
+
+  --alert-tip-bg: #ECFDF5;
+  --alert-tip-border: #10B981;
+  --alert-tip-text: #065F46;
+
+  --alert-important-bg: #F5F3FF;
+  --alert-important-border: #8B5CF6;
+  --alert-important-text: #5B21B6;
+
+  --alert-warning-bg: #FFFBEB;
+  --alert-warning-border: #F59E0B;
+  --alert-warning-text: #92400E;
+
+  --alert-caution-bg: #FEF2F2;
+  --alert-caution-border: #EF4444;
+  --alert-caution-text: #991B1B;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  --color-bg: #0B0F17;
+  --color-bg-secondary: #0F172A;
+  --color-bg-tertiary: #1E293B;
+
+  --color-surface: #0F172A;
+  --color-surface-hover: #1E293B;
+  --color-surface-active: #273549;
+
+  --color-border: #1E293B;
+  --color-border-subtle: #172234;
+  --color-border-strong: #334155;
+
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #CBD5E1;
+  --color-text-muted: #94A3B8;
+  --color-text-dim: #64748B;
+
+  --color-primary: #38BDF8;
+  --color-primary-hover: #7DD3FC;
+  --color-primary-light: rgba(56, 189, 248, 0.12);
+  --color-primary-border: rgba(56, 189, 248, 0.25);
+
+  --color-accent: #2DD4BF;
+  --color-accent-light: rgba(45, 212, 191, 0.12);
+
+  /* Code Blocks */
+  --color-code-bg: #080D1A;
+  --color-code-header-bg: #0F172A;
+  --color-code-text: #E2E8F0;
+  --color-inline-code-bg: #1E293B;
+  --color-inline-code-text: #38BDF8;
+  --color-inline-code-border: #334155;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+  --shadow-modal: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+
+  /* Alert Callouts */
+  --alert-note-bg: rgba(59, 130, 246, 0.1);
+  --alert-note-border: #3B82F6;
+  --alert-note-text: #93C5FD;
+
+  --alert-tip-bg: rgba(16, 185, 129, 0.1);
+  --alert-tip-border: #10B981;
+  --alert-tip-text: #6EE7B7;
+
+  --alert-important-bg: rgba(139, 92, 246, 0.1);
+  --alert-important-border: #8B5CF6;
+  --alert-important-text: #C4B5FD;
+
+  --alert-warning-bg: rgba(245, 158, 11, 0.1);
+  --alert-warning-border: #F59E0B;
+  --alert-warning-text: #FCD34D;
+
+  --alert-caution-bg: rgba(239, 68, 68, 0.1);
+  --alert-caution-border: #EF4444;
+  --alert-caution-text: #FCA5A5;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "portprobe-docs-site",
+  "version": "2.0.0",
+  "description": "PortProbe Enterprise Documentation Website",
+  "scripts": {
+    "build": "python scripts/generate_doc_index.py",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "portprobe",
+    "documentation",
+    "rust",
+    "sre",
+    "devops",
+    "networking"
+  ],
+  "author": "PortProbe Documentation Team",
+  "license": "MIT"
+}

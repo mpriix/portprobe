@@ -1,0 +1,63 @@
+name: Bug Report
+description: Report an issue or unexpected behavior in PortProbe
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug. Please ensure no sensitive infrastructure secrets, tokens, or private credentials are included in this report.
+        If this is a security vulnerability, please refer to [SECURITY.md](SECURITY.md) instead of creating a public issue.
+  - type: input
+    id: version
+    attributes:
+      label: PortProbe Version
+      description: What version of PortProbe are you using? (Run `portprobe --version`)
+      placeholder: "portprobe 2.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System & Architecture
+      description: What platform are you running PortProbe on?
+      options:
+        - "Linux (x86_64)"
+        - "Linux (aarch64 / ARM64)"
+        - "Windows Server / Windows 11"
+        - "macOS (Apple Silicon)"
+        - "Docker / Kubernetes Container"
+        - "Other"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Exact commands, CLI flags, or TOML configuration used.
+      placeholder: |
+        1. Start PortProbe daemon: `portprobe --bind 127.0.0.1 --port 8080 ...`
+        2. Execute probe client: `portprobe --health-check --bind 127.0.0.1 --port 8080`
+        3. Observe error ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logs or Error Output
+      description: Please copy and paste any relevant terminal output or log messages (redact sensitive values).
+      render: shell
